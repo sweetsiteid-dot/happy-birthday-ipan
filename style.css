@@ -1,0 +1,565 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffeef5;
+    color:#5b3042;
+    overflow-x:hidden;
+}
+
+/* =========================
+   PINK BACKGROUND
+========================= */
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(
+        circle at top,
+        #ffd8e7 0%,
+        #ffe9f1 35%,
+        #fff5f8 70%,
+        #ffeaf2 100%
+    );
+    z-index:-2;
+}
+
+/* SOFT GLOW */
+
+body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(255,145,185,.18);
+    filter:blur(100px);
+    top:-200px;
+    right:-150px;
+    z-index:-1;
+}
+
+/* =========================
+   OPENING
+========================= */
+
+#opening{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.opening-content{
+    animation:fadeUp 1s ease;
+}
+
+.big-heart{
+    font-size:80px;
+    margin-bottom:15px;
+    filter:drop-shadow(0 0 20px rgba(255,120,170,.3));
+    animation:heartBeat 2s ease-in-out infinite;
+}
+
+.small-title{
+    color:#b76a88;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:.75rem;
+    margin-bottom:12px;
+}
+
+#opening h1{
+    font-family:'Playfair Display',serif;
+    font-size:3.2rem;
+    font-weight:700;
+    color:#71384f;
+    margin-bottom:10px;
+}
+
+#opening p:not(.small-title){
+    color:#a05b77;
+    margin-bottom:35px;
+    font-size:1rem;
+}
+
+/* BUTTON */
+
+#openBtn{
+    border:none;
+    padding:16px 42px;
+    border-radius:999px;
+    background:#d95f8c;
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s ease;
+    box-shadow:0 10px 30px rgba(217,95,140,.25);
+}
+
+#openBtn:hover{
+    transform:translateY(-3px);
+    background:#c94f7d;
+    box-shadow:0 15px 35px rgba(217,95,140,.35);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+#mainContent{
+    display:none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.from{
+    color:#b86683;
+    letter-spacing:3px;
+    margin-bottom:25px;
+    font-size:.9rem;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+    font-family:'Playfair Display',serif;
+    color:#71384f;
+}
+
+.hero h3{
+    font-size:1.25rem;
+    margin-bottom:25px;
+    font-weight:400;
+    color:#95516d;
+    line-height:1.7;
+}
+
+.subtitle{
+    color:#a86780;
+    font-size:1.05rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+#memoryBtn{
+    border:none;
+    border-radius:999px;
+    padding:16px 45px;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    background:#d95f8c;
+    color:white;
+    transition:.3s ease;
+    box-shadow:0 10px 25px rgba(217,95,140,.2);
+}
+
+#memoryBtn:hover{
+    transform:translateY(-3px);
+    background:#c94f7d;
+    box-shadow:0 12px 30px rgba(217,95,140,.3);
+}
+
+/* =========================
+   MEMORY
+========================= */
+
+.memories{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.memories h2{
+    font-family:'Playfair Display',serif;
+    font-size:2.4rem;
+    color:#71384f;
+    margin-bottom:10px;
+}
+
+.memories p{
+    color:#a86780;
+    margin-bottom:40px;
+}
+
+/* =========================
+   SINGLE PHOTO
+========================= */
+
+.slider{
+    width:320px;
+    margin:auto;
+}
+
+.slides{
+    width:320px;
+    height:450px;
+    margin:auto;
+    position:relative;
+}
+
+.slide{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:28px;
+    display:block;
+    box-shadow:
+        0 20px 50px rgba(150,70,100,.2),
+        0 0 0 8px rgba(255,255,255,.65);
+}
+
+/* =========================
+   BIRTHDAY CARD
+========================= */
+
+.counter{
+    padding:50px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.counter-card{
+    max-width:700px;
+    background:rgba(255,255,255,.58);
+    border:1px solid rgba(255,255,255,.8);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    padding:45px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(170,80,115,.12);
+}
+
+.birthday-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.counter-card h2{
+    font-family:'Playfair Display',serif;
+    margin-bottom:15px;
+    color:#71384f;
+    font-size:2rem;
+}
+
+.counter-card p{
+    color:#996078;
+    line-height:1.9;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+    padding:100px 20px;
+}
+
+.letter h2{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:2.4rem;
+    color:#71384f;
+    margin-bottom:40px;
+}
+
+.letter-box{
+    max-width:850px;
+    margin:auto;
+    background:rgba(255,255,255,.62);
+    border:1px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:45px;
+    line-height:2;
+    box-shadow:0 20px 60px rgba(170,80,115,.12);
+}
+
+.letter-box p{
+    margin-bottom:20px;
+    color:#704356;
+}
+
+.ending-text{
+    text-align:center;
+    font-weight:600;
+    font-size:1.2rem;
+    color:#b64f78 !important;
+    margin-top:30px;
+}
+
+.signature{
+    margin-top:40px;
+    text-align:right;
+}
+
+.signature span{
+    color:#a86b82;
+}
+
+.signature h3{
+    color:#71384f;
+    font-family:'Playfair Display',serif;
+    margin-top:5px;
+}
+
+/* =========================
+   ENDING
+========================= */
+
+.ending-section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.final-heart{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.ending-section h2{
+    font-family:'Playfair Display',serif;
+    font-size:2.5rem;
+    line-height:1.3;
+    color:#71384f;
+    margin-bottom:20px;
+}
+
+.ending-section p{
+    color:#9b6379;
+    margin-bottom:30px;
+    line-height:1.8;
+}
+
+#musicBtn{
+    border:none;
+    padding:16px 40px;
+    border-radius:999px;
+    background:#d95f8c;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s ease;
+    box-shadow:0 10px 25px rgba(217,95,140,.2);
+}
+
+#musicBtn:hover{
+    transform:translateY(-3px);
+    background:#c94f7d;
+    box-shadow:0 12px 30px rgba(217,95,140,.3);
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.heart{
+    position:absolute;
+    color:rgba(217,95,140,.28);
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   HEART BEAT
+========================= */
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+/* =========================
+   FADE UP
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   FALLING EFFECT
+========================= */
+
+.falling{
+    position:fixed;
+    top:-50px;
+    pointer-events:none;
+    z-index:9999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+    from{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    #opening h1{
+        font-size:2.5rem;
+    }
+
+    .big-heart{
+        font-size:70px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero h3{
+        font-size:1.1rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+    }
+
+    .slider,
+    .slides{
+        width:300px;
+    }
+
+    .slides{
+        height:440px;
+    }
+
+    .letter{
+        padding:80px 15px;
+    }
+
+    .letter-box{
+        padding:28px 24px;
+        line-height:1.9;
+    }
+
+    .letter h2{
+        font-size:2rem;
+    }
+
+    .ending-section{
+        padding:80px 20px;
+    }
+
+    .ending-section h2{
+        font-size:1.9rem;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:380px){
+
+    .slider,
+    .slides{
+        width:275px;
+    }
+
+    .slides{
+        height:410px;
+    }
+
+    #opening h1{
+        font-size:2.2rem;
+    }
+
+    .hero h1{
+        font-size:2.6rem;
+    }
+
+    .counter-card{
+        padding:30px 22px;
+    }
+
+      }
