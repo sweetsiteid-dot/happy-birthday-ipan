@@ -42,9 +42,9 @@ openBtn.addEventListener("click", async () => {
     ========================= */
 
     const icons = [
-        "🩷",
-        "♡",
-        "♥",
+        "◇",
+        "☆",
+        "★",
         "✨",
         "🎀",
         "✦"
